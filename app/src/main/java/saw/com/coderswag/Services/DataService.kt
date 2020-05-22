@@ -6,9 +6,17 @@ import saw.com.coderswag.Model.Product
 object DataService {
  val categories = listOf(
      Category("SHIRTS", "shirtimage"),
-     Category("HODDIES","hoddieimage"),
+     Category("HODDIES","hoodieimage"),
      Category("HATS","hatimage"),
-     Category("DIGITAL","digitalgoodsimage")
+     Category("DIGITAL","digitalgoodsimage"),
+       Category("SHIRTS", "shirtimage"),
+    Category("HODDIES","hoodieimage"),
+    Category("HATS","hatimage"),
+    Category("DIGITAL","digitalgoodsimage"),
+    Category("SHIRTS", "shirtimage"),
+    Category("HODDIES","hoodieimage"),
+    Category("HATS","hatimage"),
+    Category("DIGITAL","digitalgoodsimage")
  )
     val hats = listOf(
         Product("Develops Graphic Beanie","$18","hat01"),
@@ -18,10 +26,10 @@ object DataService {
     )
 
     val hoddies = listOf(
-        Product("Develops Hoddie Gray","$28","hoddie01"),
-        Product("Develops Hoddie Red","$32","hoddie02"),
-        Product("Develops Gray Hoddie","$28","hoddie03"),
-        Product("Develops Black Hoddie","$32","hoddie04")
+        Product("Develops Hoodie Gray","$28","hoodie01"),
+        Product("Develops Hoodie Red","$32","hoodie02"),
+        Product("Develops Gray Hoodie","$28","hoodie03"),
+        Product("Develops Black Hoodie","$32","hoodie04")
     )
 
     val shirts = listOf(
