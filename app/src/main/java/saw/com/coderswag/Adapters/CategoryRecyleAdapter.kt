@@ -11,8 +11,8 @@ import kotlinx.android.synthetic.main.category_list_item.view.*
 import saw.com.coderswag.Model.Category
 import saw.com.coderswag.R
 
-class CategoryRecyleAdapter(val context: Context, val categories: List<Category>): RecyclerView.Adapter<CategoryRecyleAdapter.Holder>() {
-    inner class Holder(itemview: View?) : RecyclerView.ViewHolder(itemview!!){
+class CategoryRecyleAdapter(val context: Context, val categories: List<Category>,val itemClicked:(Category)->Unit): RecyclerView.Adapter<CategoryRecyleAdapter.Holder>() {
+    inner class Holder(itemview: View?, val itemClicked: (Category) -> Unit) : RecyclerView.ViewHolder(itemview!!){
         val categoryImage = itemview?.findViewById<ImageView>(R.id.categoryImage)
         val categoryName = itemview?.findViewById<TextView>(R.id.categoryName)
 
@@ -20,12 +20,13 @@ class CategoryRecyleAdapter(val context: Context, val categories: List<Category>
             val resourceId = context.resources.getIdentifier(category.image, "drawable", context.packageName)
             categoryImage?.setImageResource(resourceId)
             categoryName?.text = category.title
+            itemView.setOnClickListener{itemClicked(category)}
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val view = LayoutInflater.from(context).inflate(R.layout.category_list_item, parent, false )
-        return Holder(view)
+        return Holder(view, itemClicked)
     }
 
     override fun getItemCount(): Int {
